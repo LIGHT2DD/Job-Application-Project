@@ -1,0 +1,100 @@
+<!doctype html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Rejected Jobs - Job Application</title>
+    <!-- Font Link -->
+    <link rel="preconnect" href="https://fonts.googleapis.com" />
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+    <link
+      href="https://fonts.googleapis.com/css2?family=Outfit:wght@100..900&display=swap"
+      rel="stylesheet"
+    />
+
+    <!-- TailWind And DaisyUi Link -->
+    <link
+      href="https://cdn.jsdelivr.net/npm/daisyui@5"
+      rel="stylesheet"
+      type="text/css"
+    />
+    <script src="https://cdn.jsdelivr.net/npm/@tailwindcss/browser@4"></script>
+    <!-- font awesome -->
+    <link
+      rel="stylesheet"
+      href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/7.0.1/css/all.min.css"
+      integrity="sha512-2SwdPD6INVrV/lHTZbO2nodKhrnDdJK9/kg2XD1r9uGqPo1cUbujc+IYdlYdEErWNu69gVcYgdxlmVmzTWnetw=="
+      crossorigin="anonymous"
+      referrerpolicy="no-referrer"
+    />
+
+    <!--  style-->
+    <style>
+      * {
+        font-family: "Outfit", sans-serif;
+      }
+    </style>
+  </head>
+  <body class="max-w-7xl mx-auto overflow-x-hidden">
+    <section
+      id="title-container"
+      class="container mx-auto w-11/12 flex flex-col gap-3 border-b border-gray-300 pb-4 mb-4 md:flex-row md:items-start"
+    >
+      <div class="" id="">
+        <h2 class="font-bold leading-8">Job Application Tracker</h2>
+      </div>
+      <div
+        class="flex flex-col sm:flex-row md:flex-row lg:flex-row sm:justify-between md:justify-between lg:justify-between gap-4 w-full"
+        id=""
+      >
+        <div class="shadow-md rounded-sm p-4 w-full">
+          <h2 class="text-base">Total</h2>
+          <p class="font-semibold">8</p>
+        </div>
+        <div class="shadow-md rounded-sm p-4 w-full">
+          <h2 class="text-base">Interview</h2>
+          <p class="font-semibold text-[#10B981]">0</p>
+        </div>
+        <div class="shadow-md rounded-sm p-4 w-full">
+          <h2 class="text-base">Rejected</h2>
+          <p class="font-semibold text-[#EF4444]">0</p>
+        </div>
+      </div>
+    </section>
+
+    <section id="view-container" class="container mx-auto w-11/12 space-y-4">
+      <div
+        class="flex flex-col sm:flex-row md:flex-row lg:flex-row sm:justify-between md:justify-between lg:justify-between gap-2 sm:gap-4"
+      >
+        <h2 class="text-base font-semibold">Rejected Jobs</h2>
+        <p>0 Jobs</p>
+      </div>
+
+      <div
+        class="flex flex-col sm:flex-row md:flex-row lg:flex-row gap-2 sm:gap-4"
+      >
+        <a href="index.html" class="btn w-32 btn-primary btn-soft">Back</a>
+      </div>
+
+      <div class="job-container mx-auto mb-5">
+        <!-- Jobs will be displayed here -->
+      </div>
+
+      <div
+        id="no-jobs-message"
+        style="
+          text-align: center;
+          padding: 60px 20px;
+          color: #64748b;
+          font-size: 24px;
+          font-weight: 500;
+          margin-top: 40px;
+        "
+      >
+        ❌ No Jobs Available
+      </div>
+    </section>
+
+    <script src="reject.js"></script>
+  </body>
+</html>
