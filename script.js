@@ -133,7 +133,14 @@ document.head.appendChild(style);
 function loadJobsData() {
   const jobsData = localStorage.getItem("jobsData");
   if (jobsData) {
-    jobs = JSON.parse(jobsData);
+    const storedJobs = JSON.parse(jobsData);
+    // Update status of existing jobs from localStorage, keep original jobs if missing
+    jobs.forEach((job) => {
+      const storedJob = storedJobs.find((j) => j.id === job.id);
+      if (storedJob) {
+        job.status = storedJob.status;
+      }
+    });
   }
 }
 
@@ -234,10 +241,7 @@ function setupJobCards() {
       const job = jobs.find((j) => j.id === jobId);
 
       if (job) {
-        const index = jobs.indexOf(job);
-        jobs.splice(index, 1);
         card.style.display = "none";
-        updateCounts();
         console.log(`🗑️ Deleted: ${job.company}`);
       }
     });

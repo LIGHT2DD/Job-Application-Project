@@ -29,7 +29,7 @@ document.addEventListener("DOMContentLoaded", function () {
     '[id="view-container"] > div:first-child p',
   );
   if (jobCountText) {
-    jobCountText.textContent = `${rejectedJobs.length} Jobs`;
+    jobCountText.textContent = `${rejectedJobs.length} of ${totalCount} Jobs`;
   }
 
   // Display jobs or "No Jobs Available" message
@@ -79,13 +79,8 @@ document.addEventListener("DOMContentLoaded", function () {
       deleteBtn.parentElement.parentElement.addEventListener("click", () => {
         const card = deleteBtn.closest("[id$='-job']");
         const jobId = card.id;
-        const index = jobs.findIndex((j) => j.id === jobId);
-        if (index > -1) {
-          jobs.splice(index, 1);
-          localStorage.setItem("jobsData", JSON.stringify(jobs));
-          card.remove();
-          location.reload();
-        }
+        // Just hide the card from current view (don't delete permanently)
+        card.style.display = "none";
       });
     });
 
